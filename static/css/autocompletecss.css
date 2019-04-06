@@ -1,0 +1,65 @@
+ /* #app {
+  padding: 25px;
+  background: #EFEFEF;
+  color: rgb(170, 164, 164);
+  font-family: helvetica;
+} */
+
+
+#submitBox{
+ 
+    border:1px solid rgb(0, 66, 165);
+    border-radius: 1px;
+    width: 100%;
+    height: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px
+}
+
+input {
+  height: 20px;
+  border-radius: 3px;
+  border: 2px solid #888;
+  padding: 5px 10px;
+  transition: all 0.5s ease-out 0s;
+  width: 200px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2196F3;
+  border-radius: 0px;
+}
+
+.auto-complete input.has-error {
+  border-color: #F44336;
+}
+
+.auto-complete table {
+  position: absolute;
+  width: 224px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border: 2px solid #888;
+  border-top: 0px;
+  cursor: pointer;
+}
+
+.auto-complete table tr {
+  background: white;
+}
+
+.auto-complete table tr td {
+  padding: 10px
+}
+
+.auto-complete table tr:nth-child(even) {
+  background: #EEE;
+}
+
+.auto-complete table tr:hover {
+  background: #2196F3;
+  color: white;
+}
