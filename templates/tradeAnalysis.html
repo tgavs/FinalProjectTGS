@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <title>Document</title>
     <!-- AnyCharts Dependencies-->
 
     <script
@@ -68,14 +65,12 @@
 
     <!--Personal Scripts-->
 
-    
-
-
-
 </head>
 
 
-<body id="page-top">
+<body>
+
+    <body id="page-top">
 
     <!--Page Wrapper-->
   
@@ -107,6 +102,12 @@
                             </div>
                         </div>                        
                     </form>
+
+                    <div>
+                        <button id='goToTrade'><a href="/api/tradeAnalysis">Go To Trade Analysis</a></button>
+
+                    </div>
+
                 </nav>        
 
                     <!-- Nav Bar-->
@@ -163,8 +164,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Previous Close</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="previousClose">$180</div>
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">ARIMA PRICE ESTIMATE</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="previousClose">$1,200</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -180,10 +181,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Buy Recomendation</div>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">PROPHET PRICE ESTIMATE</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="buyRecomendation">70%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="buyRecomendation">$1,500</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -207,8 +208,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Sector</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="sector">Company Sector</div>
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">LTSM NEURAL NETWORK</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="sector">2,500</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -248,7 +249,7 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body" id="candleChartBody">
-                                    <div class="chart-area" id="container">
+                                    <div class="chart-area" id="models">
                                     </div>
                                 </div>
                             </div>
@@ -322,6 +323,39 @@
                         </div>
                     </div>
 
+                    <!-- Models-->
+
+                    <div class="row">
+                        <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Stock Quotes Forecast</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" id="candleChartBody">
+                                    <div class="chart-area" id="models">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>               
+                    </div>
+
 
 
 
@@ -346,20 +380,11 @@
 
 
     <link rel="stylesheet" href="../static/css/autocompletecss.css">
-    <script src="../static/js/autocomplete3.js"></script>
     <script src="../static/js/main.js"></script>
+    <script src="../static/js/tradeAnalysis.js"></script>
 
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
+    
+</body>
 </html>

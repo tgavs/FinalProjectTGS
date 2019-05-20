@@ -348,7 +348,7 @@ function stockSentiment(symbol){
                 chart.scroller().line(dataTable);
 
                 // set values for selected range
-                chart.selectRange('2019-01-01', '2019-04-04');
+                chart.selectRange('2019-01-01', '2019-05-15');
 
                 // create range picker
                 var rangePicker = anychart.ui.rangePicker();

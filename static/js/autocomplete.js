@@ -1,4 +1,4 @@
-var urlSymbols = "/symbols"
+var urlSymbols = "/api/symbols"
 
 var symbolsData=[]
 

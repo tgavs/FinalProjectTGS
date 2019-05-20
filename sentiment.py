@@ -23,7 +23,7 @@ def getSentiment(Symbol):
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(f'${ticker}')\
                                            .setSince(start.strftime('%Y-%m-%d'))\
                                            .setUntil(end.strftime('%Y-%m-%d'))\
-                                           .setMaxTweets(1500)
+                                           .setMaxTweets(1000)
 
 
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)

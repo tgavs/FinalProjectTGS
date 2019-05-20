@@ -1,17 +1,13 @@
 
 var dataSymbols=[]
 
-d3.json("/symbols/").then(function(SymbolsData){
+d3.json("api/symbols/").then(function(SymbolsData){
     console.log(SymbolsData)
 
     SymbolsData.forEach()
 
 
 })
-
-
-
-
 
 Vue.component('auto-complete', {
     template: `
@@ -84,7 +80,8 @@ new Vue({
         fetch('./api/symbols')
         .then(data => data.json())
         .then(json => console.log(json))
-        .then(json => this.people=json)
+        .then(json => this.people=json.symbols)
+
 
        
     }

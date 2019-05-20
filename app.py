@@ -26,6 +26,8 @@ from quotes import getHistory, getSymbolData
 from forecast import prophetForecast
 from sentiment import getSentiment
 
+from forecastModels import priceModels,getHistoryPriceModels
+
 app = Flask(__name__)
 
 
@@ -61,7 +63,7 @@ def setup():
 @app.route("/")
 def index():
     """Return the homepage."""
-    return render_template("index2.html")
+    return render_template("home.html")
 
 
 @app.route("/api/symbols")
@@ -69,7 +71,7 @@ def symbols():
 
    #Use Pandas to perform the sql query
 
-    results=db.session.query(Symbols.name,Symbols.symbol).all()
+    results=db.session.query(Symbols.name,Symbols.symbol).limit(150)
 
     symbolsDF={'symbols':[result[1] for result in results]    
               }
@@ -126,6 +128,27 @@ def symbolSentiment(symbol,methods=["GET","POST"]):
     sentimentData= getSentiment(symbol)
 
     return sentimentData
+
+
+@app.route("/api/tradeAnalysis")
+
+def modelsPage():
+
+    return render_template("tradeAnalysis.html")
+
+@app.route("/api/tradeAnalysis/<symbol>")
+
+def tradeModels(symbol,methods=["GET","POST"]):
+
+    if request.method=="POST":
+
+        symbol=request.form["symbol"]
+    
+    prices=getHistoryPriceModels(symbol)
+
+    priceForecast=priceModels(prices)
+
+    return priceForecast
 
 if __name__ == "__main__":
     app.run(debug=True)
